@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ITicket } from "../../types/ticketTypes";
 import TicketCard from "../common/TicketCard";
 import EventsFilter from './EventsFilter';
@@ -11,7 +11,11 @@ interface PageProps {
 
 const AllTickets = ({ ticketsData }: PageProps) => {
   const [filterLocation, setFilterLocation] = useState("");
-  const [allTicketData, setAllTicketData] = useState<ITicket[]>(ticketsData);
+  const [allTicketData, setAllTicketData] = useState<ITicket[]>([]);
+  
+  useEffect(() => {
+    setAllTicketData(ticketsData)
+  }, [ticketsData])
 
   const handleLocationFilter = (location: string) => {
     if (location) {
