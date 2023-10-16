@@ -185,13 +185,16 @@ const LoginForm = () => {
         </Button>
 
         <div className="space-x-2 self-center">
-          <span>Don&aptos;t have an account?</span>
+          <span>{`Don't have an account?`}</span>
           <Link href="/sign-up" className="text-[#4148FE] hover:underline">
             Sign Up
           </Link>
         </div>
       </div>
-      <WalletConnectDialog openDialog={openDialog} setOpenDialog={setOpenDialog} />
+      <WalletConnectDialog
+        openDialog={openDialog}
+        setOpenDialog={setOpenDialog}
+      />
     </div>
   );
 }

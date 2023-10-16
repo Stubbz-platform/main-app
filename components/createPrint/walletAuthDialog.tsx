@@ -50,10 +50,10 @@ const AuthPrintWallet = ({
       <Dialog open={openDialog} onOpenChange={handleDialog}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>You aren&aptos;t supposed to be here!</DialogTitle>
+            <DialogTitle>{`You aren't supposed to be here!`}</DialogTitle>
             <DialogDescription>
-              Since you&aptos;re already here, tell me, what&aptos;s the secret
-              to stubbz?
+              {`Since you're already here, tell me, what's the secret
+              to stubbz?`}
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
