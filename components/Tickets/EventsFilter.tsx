@@ -72,15 +72,12 @@ const EventsFilter = ({
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             {EventLocations.map((location, index) => (
-              <>
                 <DropdownMenuItem
                   key={index}
                   onClick={() => handleLocationFilter(location.city)}
                 >
                   {location.city}, {location.code}
                 </DropdownMenuItem>
-                {/* <DropdownMenuSeparator /> */}
-              </>
             ))}
             <DropdownMenuSeparator />
             <DropdownMenuItem

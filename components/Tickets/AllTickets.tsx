@@ -30,7 +30,7 @@ const AllTickets = ({ ticketsData }: PageProps) => {
   ));
 
   return (
-    <section className="flex flex-col items-center justify-center gap-6 py-8 px-8 md:px-0">
+    <section className="flex flex-col items-center justify-center gap-6 py-8 px-6 md:px-0 border">
       <Heading />
       <EventsFilter
         handleLocationFilter={handleLocationFilter}

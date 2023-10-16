@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const HostSection = () => {
   return (
-    <section className="py-8 px-8 md:px-0" id="host-section">
+    <section className="py-8 px-6 md:px-0" id="host-section">
       <div className="w-full bg-primary flex flex-col items-center justify-center relative py-[60px] px-[20px] lg:p-[150px] rounded-[32px]">
         <Image
           src={circle}

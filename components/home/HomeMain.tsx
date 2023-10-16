@@ -11,7 +11,7 @@ interface HomeProps {
 
 const HomeMain = ({ ticketsData } : HomeProps) => {
   return (
-    <div className="space-y-14 ">
+    <div className="space-y-14">
       <HeroSection />
       <AllTickets ticketsData={ticketsData} />
       <HostSection />

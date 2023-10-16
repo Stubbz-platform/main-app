@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import darklogo from "/public/images/stubbz_logo.png";
 import lightlogo from "/public/images/stubbz_logo_light.png";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,13 +12,11 @@ const FooterMain = () => {
   return (
     <div className="flex flex-col items-center md:items-stretch gap-16 max-w-7xl mx-auto px-4">
       <div className="md:self-start flex flex-col gap-8">
-        <Link href="/" className="flex justify-center md:justify-start items-center gap-4">
-          <Image
-            src={ lightlogo }
-            height={30}
-            width={30}
-            alt="stubbz_logo"
-          />
+        <Link
+          href="/"
+          className="flex justify-center md:justify-start items-center gap-4"
+        >
+          <Image src={lightlogo} height={30} width={30} alt="stubbz_logo" />
           <h5 className="text-xl">Stubbz</h5>
         </Link>
         <span>Event management and tickting platform</span>
@@ -46,15 +43,21 @@ const FooterMain = () => {
         </div>
         <div className="flex gap-6">
           <Link
-            href="/"
+            href="https://twitter.com/Stubbztix"
             className="text-primary opacity-70 hover:opacity-100 hover:ease-in-out delay-100 transition-all duration-500"
           >
             <Twitter />
           </Link>
-          <Link href="/" className="text-primary opacity-70 hover:opacity-100 hover:ease-in-out delay-100 transition-all duration-500">
+          <Link
+            href="/"
+            className="text-primary opacity-70 hover:opacity-100 hover:ease-in-out delay-100 transition-all duration-500"
+          >
             <Instagram />
           </Link>
-          <Link href="/" className="text-primary opacity-70 hover:opacity-100 hover:ease-in-out delay-100 transition-all duration-500">
+          <Link
+            href="https://github.com/Stubbz-platform"
+            className="text-primary opacity-70 hover:opacity-100 hover:ease-in-out delay-100 transition-all duration-500"
+          >
             <Github />
           </Link>
         </div>

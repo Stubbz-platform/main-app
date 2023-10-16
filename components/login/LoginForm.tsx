@@ -23,6 +23,7 @@ import { Eye, EyeOff, Loader } from "lucide-react";
 import FormDivider from '../common/FormDivider';
 import FormsHeading from '../common/FormsHeading';
 import WalletConnectDialog from '../common/WalletConnectDialog';
+import ComingSoonDialog from '../common/ComingSoonDialog';
 import { ToastAction } from '../ui/toast';
 import { useSearchParams } from 'next/navigation';
 
@@ -191,10 +192,11 @@ const LoginForm = () => {
           </Link>
         </div>
       </div>
-      <WalletConnectDialog
+      <ComingSoonDialog openDialog={openDialog} setOpenDialog={setOpenDialog} />
+      {/* <WalletConnectDialog
         openDialog={openDialog}
         setOpenDialog={setOpenDialog}
-      />
+      /> */}
     </div>
   );
 }

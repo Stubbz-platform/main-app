@@ -25,6 +25,7 @@ import { ToastAction } from "../ui/toast";
 import { Eye, EyeOff, Loader } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import WalletConnectDialog from "../common/WalletConnectDialog";
+import ComingSoonDialog from "../common/ComingSoonDialog";
 
 
 
@@ -54,7 +55,9 @@ const FormSchema = z
 const SignupForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false)
-  const [currentFormState, setCurrentFormState] = useState("idle");
+  const [currentFormState, setCurrentFormState] = useState<
+    "initial" | "authenticating"
+  >("initial");
   const [openDialog, setOpenDialog] = useState<boolean>(false);
   const { toast } = useToast();
   const route = useRouter();
@@ -109,7 +112,7 @@ const SignupForm = () => {
     } catch (error) {
         console.log(error)
     }
-    setCurrentFormState("idle");
+    setCurrentFormState("initial");
   };
 
   return (
@@ -264,10 +267,11 @@ const SignupForm = () => {
           </Link>
         </div>
       </div>
-      <WalletConnectDialog
+      <ComingSoonDialog openDialog={openDialog} setOpenDialog={setOpenDialog} />
+      {/* <WalletConnectDialog
         openDialog={openDialog}
         setOpenDialog={setOpenDialog}
-      />
+      /> */}
     </div>
   );
 };
