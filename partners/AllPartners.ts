@@ -1,0 +1,1 @@
+export const allPartners = ["Capital Block", "Rave Africa"]
