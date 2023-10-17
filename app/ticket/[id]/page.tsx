@@ -9,7 +9,7 @@ const getIndividualTicketData = async (id: string) => {
 }
 
 const IndividualTicketPage = async({params}: any) => {
-  
+
   const ticket = await getIndividualTicketData(params.id);
   return (
     <section className="flex min-h-screen flex-col items-center justify-center p-10">
@@ -18,4 +18,4 @@ const IndividualTicketPage = async({params}: any) => {
   );
 }
 
-export default IndividualTicketPage
+export default IndividualTicketPage;

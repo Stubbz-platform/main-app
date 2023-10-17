@@ -5,12 +5,12 @@ import { Button } from '../ui/button';
 
 const ErrorMessage = () => {
   return (
-    <div className="space-y-6">
+    <>
       <h2>Page Not Found</h2>
-      <Link href="/">
-        <Button variant="link">Please Return Home!</Button>
-      </Link>
-    </div>
+      <Button asChild>
+        <Link href="/">Return Home</Link>
+      </Button>
+    </>
   );
 };
 

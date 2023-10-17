@@ -15,23 +15,20 @@ interface PageProps {
 const TicketCardExt = ({ eventData }: PageProps) => {
   const dateTime = getDateAndTime(eventData.dateTime);
   return (
-    <div
-      className="flex flex-col gap-[calc(40px-16px)] border-2 py-3 rounded-lg hover:bg-accent  hover:ease-in-out delay-100 transition-all duration-500"
-    >
-      <h4 className="text-xl px-2 font-semibold max-w-[300px] h-10">
+    <div className="flex flex-col gap-[calc(40px-16px)] border-2 py-3 rounded-lg hover:bg-accent  hover:ease-in-out delay-100 transition-all duration-500 min-w-[300px]">
+      <h4 className="text-xl px-2 font-semibold max-w-[400px] h-10">
         {eventData.name}
       </h4>
       <Image
         src={image}
         alt={eventData.name}
-        // className="rounded-lg"
+        // fill
+        className="w-full"
       />
       <div className="flex flex-col gap-2 pl-2">
         <div className="flex items-center gap-2">
           <CalendarDays className="text-primary w-5 h-5" />
-          <div className="flex items-center gap-1">
-            <span className="text-sm font-medium opacity-80">{dateTime}</span>
-          </div>
+          <span className="text-sm font-medium opacity-80">{dateTime}</span>
         </div>
         <div className="flex items-center gap-2">
           <Banknote className="text-primary w-5 h-5" />
@@ -54,13 +51,17 @@ const TicketCardExt = ({ eventData }: PageProps) => {
         <div className="flex items-center gap-2">
           <MapPin className="text-primary w-5 h-5" />
           <div className="flex items-center gap-1">
-            <span className="text-sm font-medium opacity-80">{eventData.location}</span>
+            <span className="text-sm font-medium opacity-80">
+              {eventData.location}
+            </span>
           </div>
           <Map className="text-primary w-5 h-5" />
           <Link
             href={`https://www.google.com/maps/place/${eventData.location}`}
             className="underline"
-          >Map direction</Link>
+          >
+            Map direction
+          </Link>
         </div>
       </div>
     </div>

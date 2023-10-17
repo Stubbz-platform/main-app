@@ -1,4 +1,3 @@
-import React from 'react'
 import { ITicket } from '@/types/ticketTypes'
 import TicketCardExt from '../common/TicketCardExt';
 import TicketsSelect from '../common/TicketsSelect';

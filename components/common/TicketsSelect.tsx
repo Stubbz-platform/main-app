@@ -85,7 +85,6 @@ const TicketsSelect = ({eventData}: PageProps) => {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               {eventData.tickets.map((ticket, index) => (
-                <>
                   <DropdownMenuItem
                     key={index}
                     onClick={() => {
@@ -97,7 +96,6 @@ const TicketsSelect = ({eventData}: PageProps) => {
                     <span>{ticket.ticketClass}</span>
                     <span>$ {ticket.price}</span>
                   </DropdownMenuItem>
-                </>
               ))}
             </DropdownMenuGroup>
           </DropdownMenuContent>
@@ -164,7 +162,7 @@ const TicketsSelect = ({eventData}: PageProps) => {
           disabled={true}
           onClick={createSession}
         >
-          Pay
+          Buy
         </Button>
       )}
     </div>

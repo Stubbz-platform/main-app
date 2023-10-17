@@ -27,7 +27,7 @@ const TicketCard = ({ eventData }: ChildProps) => {
       <Image
         src={image}
         alt={eventData.name}
-        // className="rounded-lg"
+        className="w-full"
       />
       <div className="flex flex-col gap-2 pl-2">
         <div className="flex items-center gap-2">
