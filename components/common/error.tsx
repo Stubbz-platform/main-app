@@ -6,7 +6,7 @@ import { Button } from '../ui/button';
 const ErrorMessage = () => {
   return (
     <>
-      <h2>Page Not Found</h2>
+      <h2>An Error occurred.</h2>
       <Button asChild>
         <Link href="/">Return Home</Link>
       </Button>

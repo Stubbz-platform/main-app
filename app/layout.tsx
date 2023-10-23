@@ -12,7 +12,10 @@ const inter = Inter({ subsets: ["latin"] });
 const roobert = localFont({ src: "../fonts/Roobert-Regular.ttf" });
 
 export const metadata: Metadata = {
-  title: "Stubzz",
+  title: {
+    default: "Stubbz",
+    template: "%s | Stubbz",
+  },
   description: "The Event Management platform from the future!",
 };
 
