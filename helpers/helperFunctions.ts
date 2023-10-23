@@ -1,4 +1,4 @@
-import { TicketEventTypes } from "../types/ticketTypes"
+import { ITicket, TicketEventTypes, ITicketClass } from "../types/ticketTypes"
 import { CapitalBlockMintData } from "../partners/capitalblock/data"
 import { allPartners } from "../partners/AllPartners"
 
@@ -56,6 +56,17 @@ export function getDateAndTime(dateandTime: string): string {
     date
   );
   return formattedDate;
+}
+
+export function getPriceRange(ticket: ITicketClass[]): string {
+  const prices = ticket.map(tic => tic.price);
+  if (!Array.isArray(prices) || prices.length === 0) {
+    return "No numbers provided";
+  }
+  const lowest = Math.min(...prices);
+  const highest = Math.max(...prices);
+  return `$ ${lowest} - $ ${highest}`;
+
 }
 
 
