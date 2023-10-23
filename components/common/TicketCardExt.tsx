@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TicketEventTypes } from "@/types/ticketTypes";
 import Image from "next/image";
 import { Banknote, CalendarDays, Dot, Map, MapPin } from "lucide-react";
@@ -13,7 +13,11 @@ interface PageProps {
 }
 
 const TicketCardExt = ({ eventData }: PageProps) => {
-  const dateTime = getDateAndTime(eventData.dateTime);
+  const [dateTime, setDateTime] = useState<string>("")
+
+  useEffect(() => {
+    setDateTime(getDateAndTime(eventData.dateTime))
+  }, [eventData]) 
   const priceRange = getPriceRange(eventData.tickets);
   return (
     <div className="flex flex-col gap-[calc(40px-16px)] border-2 py-3 rounded-lg hover:bg-accent  hover:ease-in-out delay-100 transition-all duration-500 min-w-[300px]">
@@ -29,7 +33,7 @@ const TicketCardExt = ({ eventData }: PageProps) => {
       <div className="flex flex-col gap-2 pl-2">
         <div className="flex items-center gap-2">
           <CalendarDays className="text-primary w-5 h-5" />
-          <span className="text-sm font-medium opacity-80">{dateTime}</span>
+          <span className="text-sm font-medium opacity-80">{dateTime ? dateTime : "loading date..."}</span>
         </div>
         <div className="flex items-center gap-2">
           <Banknote className="text-primary w-5 h-5" />

@@ -118,7 +118,6 @@ const TicketsSelect = ({eventData}: PageProps) => {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               {ticketNumbers.map((number, index) => (
-                <>
                   <DropdownMenuItem
                     key={index}
                     onClick={() => {
@@ -128,7 +127,6 @@ const TicketsSelect = ({eventData}: PageProps) => {
                   >
                     {number}
                   </DropdownMenuItem>
-                </>
               ))}
             </DropdownMenuGroup>
           </DropdownMenuContent>

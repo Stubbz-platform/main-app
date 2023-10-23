@@ -1,11 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { TicketEventTypes } from '@/types/ticketTypes'
 import Image from 'next/image'
 import { Banknote, CalendarDays, Dot } from 'lucide-react';
 import Link from 'next/link';
 import { ITicket, ITicketClass } from '@/types/ticketTypes';
-import { getDateAndTime } from '@/helpers/helperFunctions';
+import { getDateAndTime, getPriceRange } from '@/helpers/helperFunctions';
 import image from "/public/images/city_block_party.png"
 
 
@@ -14,8 +14,12 @@ interface ChildProps {
 }
 
 const TicketCard = ({ eventData }: ChildProps) => {
+  const [dateTime, setDateTime] = useState<string>("");
 
-  const dateTime = getDateAndTime(eventData.dateTime);
+  useEffect(() => {
+    setDateTime(getDateAndTime(eventData.dateTime));
+  }, [eventData]); 
+  const priceRange = getPriceRange(eventData.tickets);
   return (
     <Link
       href={`/ticket/${eventData._id}`}
@@ -24,24 +28,20 @@ const TicketCard = ({ eventData }: ChildProps) => {
       <h4 className="text-xl px-2 font-semibold max-w-[300px] h-10">
         {eventData.name}
       </h4>
-      <Image
-        src={image}
-        alt={eventData.name}
-        className="w-full"
-      />
+        <Image src={image} alt={eventData.name}  className='w-full' />
       <div className="flex flex-col gap-2 pl-2">
         <div className="flex items-center gap-2">
           <CalendarDays className="text-primary w-5 h-5" />
           <div className="flex items-center gap-1">
-            <span className="text-sm font-medium opacity-80">{dateTime}</span>
+            <span className="text-sm font-medium opacity-80">
+              {dateTime ? dateTime : "loading date..."}
+            </span>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <Banknote className="text-primary w-5 h-5" />
           <div className="flex items-center gap-1">
-            <span className="text-sm font-bold">
-              ${100} - ${1000}
-            </span>
+            <span className="text-sm font-bold">{priceRange}</span>
             <span className="text-[12px] text-[#E01414] font-medium">
               (100 tickets remaining)
             </span>
