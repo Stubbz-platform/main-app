@@ -10,10 +10,14 @@ const getIndividualTicketData = async (id: string): Promise<ITicket> => {
   return ticket;
 }
 
-export const generateMetaData = async({params}: {params: {id: string }}): Promise<Metadata> => {
+export const generateMetadata = async ({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> => {
   const ticket = await getIndividualTicketData(params.id);
-  return {title: ticket.name};
-}
+  return { title: ticket.name };
+};
 
 const IndividualTicketPage = async ({ params }: { params: { id: string } }) => {
   const ticket: ITicket = await getIndividualTicketData(params.id);
